@@ -27,7 +27,9 @@ import { PanelBody, SelectControl } from "@wordpress/components";
 import "./editor.scss";
 
 import { SvgIcons } from "./icons";
-import { Apple } from "lucide-react";
+import * as LucideIcons from "lucide-react";
+import IconPicker from "./includes/IconPicker";
+import * as icons from "lucide-static";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -40,9 +42,16 @@ import { Apple } from "lucide-react";
 export default function Edit({ attributes, setAttributes }) {
 	const { icon } = attributes;
 
+	console.log("icon", icon);
+
 	const blockProps = useBlockProps();
 
 	const colorProps = useColorProps(blockProps);
+
+	//console.log("LucideIcons", LucideIcons);
+	const iconsArray = Object.keys(icons);
+	console.log("iconsArray", iconsArray);
+	const IconComponent = LucideIcons[icon]; //LucideIcons[icon];
 
 	return (
 		<>
@@ -58,11 +67,22 @@ export default function Edit({ attributes, setAttributes }) {
 						onChange={(value) => setAttributes({ icon: value })}
 					/>
 				</PanelBody>
+				<PanelBody title={__("Icon Picker")}>
+					<IconPicker
+						selected={icon}
+						onSelect={(name) => setAttributes({ icon: name })}
+					/>
+				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
-				<div>{SvgIcons[icon] || null}</div>
-				<div>
+				{/* <div>{SvgIcons[icon] || null}</div> */}
+				{/* <div>
 					<Apple className="w-6 h-6" color={colorProps.style?.color} />
+				</div> */}
+				<div className="mt-4">
+					{IconComponent && (
+						<IconComponent className="w-10 h-10 text-blue-600" />
+					)}
 				</div>
 			</div>
 		</>

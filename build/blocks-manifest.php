@@ -17,13 +17,13 @@ return array(
 			'html' => false,
 			'color' => array(
 				'text' => true,
-				'background' => false
+				'background' => true
 			)
 		),
 		'attributes' => array(
 			'icon' => array(
 				'type' => 'string',
-				'default' => 'star'
+				'default' => 'Apple'
 			)
 		),
 		'textdomain' => 'svg-icon-block',

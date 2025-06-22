@@ -12,13 +12,13 @@
     "html": false,
     "color": {
       "text": true,
-      "background": false
+      "background": true
     }
   },
   "attributes": {
     "icon": {
       "type": "string",
-      "default": "star"
+      "default": "Apple"
     }
   },
   "textdomain": "svg-icon-block",
