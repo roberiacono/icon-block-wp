@@ -15,8 +15,9 @@ import {
 	useBlockProps,
 	InspectorControls,
 	__experimentalUseColorProps as useColorProps,
+	ColorPalette,
 } from "@wordpress/block-editor";
-import { PanelBody, SelectControl } from "@wordpress/components";
+import { PanelBody, RangeControl, SelectControl } from "@wordpress/components";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,7 +30,7 @@ import "./editor.scss";
 import { SvgIcons } from "./icons";
 import * as LucideIcons from "lucide-react";
 import IconPicker from "./includes/IconPicker";
-import * as icons from "lucide-static";
+import { useEffect, useRef, useState } from "@wordpress/element";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -40,33 +41,18 @@ import * as icons from "lucide-static";
  * @return {Element} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-	const { icon } = attributes;
-
-	console.log("icon", icon);
+	const { icon, size, iconColor, iconBackgroundColor } = attributes;
 
 	const blockProps = useBlockProps();
 
 	const colorProps = useColorProps(blockProps);
+	console.log("colorProps", colorProps);
 
-	//console.log("LucideIcons", LucideIcons);
-	const iconsArray = Object.keys(icons);
-	console.log("iconsArray", iconsArray);
 	const IconComponent = LucideIcons[icon]; //LucideIcons[icon];
 
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__("Icon Settings")}>
-					<SelectControl
-						label={__("Select an Icon")}
-						value={icon}
-						options={[
-							{ label: "Star", value: "star" },
-							{ label: "Heart", value: "heart" },
-						]}
-						onChange={(value) => setAttributes({ icon: value })}
-					/>
-				</PanelBody>
 				<PanelBody title={__("Icon Picker")}>
 					<IconPicker
 						selected={icon}
@@ -74,14 +60,39 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 			</InspectorControls>
+			<InspectorControls group="styles">
+				<PanelBody title="Icon Colors" initialOpen={true}>
+					<p>Icon Color</p>
+					<ColorPalette
+						value={iconColor}
+						onChange={(color) => setAttributes({ iconColor: color })}
+					/>
+					<p>Icon Background Color</p>
+					<ColorPalette
+						value={iconBackgroundColor}
+						onChange={(color) => setAttributes({ iconBackgroundColor: color })}
+					/>
+				</PanelBody>
+				<PanelBody title={__("Size")}>
+					<RangeControl
+						label="Icon Size"
+						value={size}
+						onChange={(value) => setAttributes({ size: value })}
+						min={8}
+						max={128}
+					/>
+				</PanelBody>
+			</InspectorControls>
 			<div {...blockProps}>
-				{/* <div>{SvgIcons[icon] || null}</div> */}
-				{/* <div>
-					<Apple className="w-6 h-6" color={colorProps.style?.color} />
-				</div> */}
-				<div className="mt-4">
+				<div
+					style={{
+						color: iconColor || "inherit",
+						backgroundColor: iconBackgroundColor || "transparent",
+						display: "inline-block",
+					}}
+				>
 					{IconComponent && (
-						<IconComponent className="w-10 h-10 text-blue-600" />
+						<IconComponent className="w-10 h-10 text-blue-600" size={size} />
 					)}
 				</div>
 			</div>

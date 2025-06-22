@@ -9,16 +9,22 @@
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
   "supports": {
-    "html": false,
-    "color": {
-      "text": true,
-      "background": true
-    }
+    "html": false
   },
   "attributes": {
     "icon": {
       "type": "string",
       "default": "Apple"
+    },
+    "size": {
+      "type": "number",
+      "default": 24
+    },
+    "iconColor": {
+      "type": "string"
+    },
+    "iconBackgroundColor": {
+      "type": "string"
     }
   },
   "textdomain": "svg-icon-block",

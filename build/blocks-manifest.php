@@ -14,16 +14,22 @@ return array(
 			
 		),
 		'supports' => array(
-			'html' => false,
-			'color' => array(
-				'text' => true,
-				'background' => true
-			)
+			'html' => false
 		),
 		'attributes' => array(
 			'icon' => array(
 				'type' => 'string',
 				'default' => 'Apple'
+			),
+			'size' => array(
+				'type' => 'number',
+				'default' => 24
+			),
+			'iconColor' => array(
+				'type' => 'string'
+			),
+			'iconBackgroundColor' => array(
+				'type' => 'string'
 			)
 		),
 		'textdomain' => 'svg-icon-block',
