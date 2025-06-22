@@ -9,7 +9,17 @@
 	"description": "Example block scaffolded with Create Block tool.",
 	"example": {},
 	"supports": {
-		"html": false
+		"html": false,
+		"color": {
+			"text": true,
+			"background": true
+		}
+	},
+	"attributes": {
+		"icon": {
+		"type": "string",
+		"default": "star"
+		}
 	},
 	"textdomain": "svg-icon-block",
 	"editorScript": "file:./index.js",
