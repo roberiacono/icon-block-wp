@@ -17,7 +17,7 @@ return array(
 			'html' => false,
 			'color' => array(
 				'text' => true,
-				'background' => true
+				'background' => false
 			)
 		),
 		'attributes' => array(

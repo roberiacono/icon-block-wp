@@ -12,7 +12,7 @@
     "html": false,
     "color": {
       "text": true,
-      "background": true
+      "background": false
     }
   },
   "attributes": {
