@@ -17,8 +17,26 @@ import { useBlockProps } from "@wordpress/block-editor";
  */
 
 import { SvgIcons } from "./icons";
+import * as LucideIcons from "lucide-react";
 
 export default function save({ attributes }) {
-	const { icon } = attributes;
-	return <div {...useBlockProps.save()}>{SvgIcons[icon] || null}</div>;
+	const { icon, size, iconColor, iconBackgroundColor } = attributes;
+
+	const blockProps = useBlockProps.save();
+
+	const IconComponent = LucideIcons[icon];
+
+	return (
+		<div {...blockProps}>
+			<div
+				style={{
+					color: iconColor || "inherit",
+					backgroundColor: iconBackgroundColor || "transparent",
+					display: "inline-block",
+				}}
+			>
+				{IconComponent && <IconComponent size={size} />}
+			</div>
+		</div>
+	);
 }
