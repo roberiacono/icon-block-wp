@@ -16,6 +16,7 @@ import {
 	InspectorControls,
 	__experimentalUseColorProps as useColorProps,
 	ColorPalette,
+	PanelColorSettings,
 } from "@wordpress/block-editor";
 import { PanelBody, RangeControl, SelectControl } from "@wordpress/components";
 
@@ -61,18 +62,23 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 			<InspectorControls group="styles">
-				<PanelBody title="Icon Colors" initialOpen={true}>
-					<p>Icon Color</p>
-					<ColorPalette
-						value={iconColor}
-						onChange={(color) => setAttributes({ iconColor: color })}
-					/>
-					<p>Icon Background Color</p>
-					<ColorPalette
-						value={iconBackgroundColor}
-						onChange={(color) => setAttributes({ iconBackgroundColor: color })}
-					/>
-				</PanelBody>
+				<PanelColorSettings
+					title="Icon Colors"
+					initialOpen={true}
+					colorSettings={[
+						{
+							value: iconColor,
+							onChange: (color) => setAttributes({ iconColor: color }),
+							label: "Icon Color",
+						},
+						{
+							value: iconBackgroundColor,
+							onChange: (color) =>
+								setAttributes({ iconBackgroundColor: color }),
+							label: "Background Color",
+						},
+					]}
+				/>
 				<PanelBody title={__("Size")}>
 					<RangeControl
 						label="Icon Size"
