@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "icon-block-wp/icon-block-wp",
+	"version": "0.1.0",
+	"title": "Icons",
+	"category": "widgets",
+	"icon": "lightbulb",
+	"description": "Add SVG icons to your content with full control over icon selection, size, color, alignment, and background gradients.",
+	"example": {},
+	"supports": {
+		"html": false,
+		"textAlign": true
+	},
+	"attributes": {
+		"icon": {
+			"type": "string",
+			"default": "Stars"
+		},
+		"size": {
+			"type": "number",
+			"default": 24
+		},
+		"iconColor": {
+			"type": "string"
+		},
+		"iconBackgroundColor": {
+			"type": "string"
+		},
+		"iconBackgroundColorGradient": {
+			"type": "string"
+		},
+		"iconAlign": {
+			"type": "string"
+		}
+	},
+	"textdomain": "icon-block-wp",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css" 
+}

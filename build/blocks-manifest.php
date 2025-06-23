@@ -1,15 +1,15 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
-	'svg-icon-block' => array(
+	'icon-block-wp' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'create-block/svg-icon-block',
+		'name' => 'icon-block-wp/icon-block-wp',
 		'version' => '0.1.0',
-		'title' => 'Svg Icon Block',
+		'title' => 'Icons',
 		'category' => 'widgets',
-		'icon' => 'smiley',
-		'description' => 'Example block scaffolded with Create Block tool.',
+		'icon' => 'lightbulb',
+		'description' => 'Add SVG icons to your content with full control over icon selection, size, color, alignment, and background gradients.',
 		'example' => array(
 			
 		),
@@ -20,7 +20,7 @@ return array(
 		'attributes' => array(
 			'icon' => array(
 				'type' => 'string',
-				'default' => 'Apple'
+				'default' => 'Stars'
 			),
 			'size' => array(
 				'type' => 'number',
@@ -39,10 +39,9 @@ return array(
 				'type' => 'string'
 			)
 		),
-		'textdomain' => 'svg-icon-block',
+		'textdomain' => 'icon-block-wp',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
+		'style' => 'file:./style-index.css'
 	)
 );
