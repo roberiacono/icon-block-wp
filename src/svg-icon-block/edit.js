@@ -16,7 +16,7 @@ import {
 	InspectorControls,
 	__experimentalUseColorProps as useColorProps,
 	ColorPalette,
-	PanelColorSettings,
+	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
 } from "@wordpress/block-editor";
 import { PanelBody, RangeControl, SelectControl } from "@wordpress/components";
 
@@ -42,12 +42,19 @@ import { useEffect, useRef, useState } from "@wordpress/element";
  * @return {Element} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-	const { icon, size, iconColor, iconBackgroundColor } = attributes;
+	const {
+		icon,
+		size,
+		iconColor,
+		iconBackgroundColor,
+		iconBackgroundColorGradient,
+	} = attributes;
 
 	const blockProps = useBlockProps();
 
 	const colorProps = useColorProps(blockProps);
 	console.log("colorProps", colorProps);
+	console.log("attributes", attributes);
 
 	const IconComponent = LucideIcons[icon]; //LucideIcons[icon];
 
@@ -62,20 +69,27 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 			<InspectorControls group="styles">
-				<PanelColorSettings
+				<PanelColorGradientSettings
 					title="Icon Colors"
 					initialOpen={true}
-					colorSettings={[
+					settings={[
 						{
-							value: iconColor,
-							onChange: (color) => setAttributes({ iconColor: color }),
+							colorValue: iconColor,
+							onColorChange: (color) => setAttributes({ iconColor: color }),
 							label: "Icon Color",
 						},
 						{
-							value: iconBackgroundColor,
-							onChange: (color) =>
-								setAttributes({ iconBackgroundColor: color }),
-							label: "Background Color",
+							colorValue: iconBackgroundColor,
+							gradientValue: iconBackgroundColorGradient,
+							onColorChange: (value) => {
+								console.log("changed color", value);
+								setAttributes({ iconBackgroundColor: value });
+							},
+							onGradientChange: (value) => {
+								console.log("changed gradient", value);
+								setAttributes({ iconBackgroundColorGradient: value });
+							},
+							label: __("Gradient One"),
 						},
 					]}
 				/>
@@ -94,6 +108,7 @@ export default function Edit({ attributes, setAttributes }) {
 					style={{
 						color: iconColor || "inherit",
 						backgroundColor: iconBackgroundColor || "transparent",
+						background: iconBackgroundColorGradient || "transparent",
 						display: "inline-block",
 					}}
 				>

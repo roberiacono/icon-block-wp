@@ -25,6 +25,9 @@
 		},
 		"iconBackgroundColor": {
 			"type": "string"
+		},
+		"iconBackgroundColorGradient": {
+			"type": "string"
 		}
 	},
 	"textdomain": "svg-icon-block",

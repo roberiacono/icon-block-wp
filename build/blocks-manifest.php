@@ -30,6 +30,9 @@ return array(
 			),
 			'iconBackgroundColor' => array(
 				'type' => 'string'
+			),
+			'iconBackgroundColorGradient' => array(
+				'type' => 'string'
 			)
 		),
 		'textdomain' => 'svg-icon-block',
