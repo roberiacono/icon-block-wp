@@ -10,6 +10,18 @@ Add customizable icons to your content with full control over icon selection, si
 
 ---
 
+## Screenshots
+
+### 1. Icon Block in the WordPress Editor
+
+![Icon Block Screenshot](screenshot-1.png)
+
+### 2. Icon in the Frontend
+
+![Icon Block Screenshot](screenshot-2.png)
+
+---
+
 ## Features
 
 - Icon Picker with search functionality
@@ -35,18 +47,6 @@ Add customizable icons to your content with full control over icon selection, si
 ### How do I select an icon?
 
 Open the block settings panel in the right sidebar, and click on the “Icon Picker.” Use the search box to quickly find and select any icon from the Lucide library.
-
----
-
-## Screenshots
-
-### 1. Icon Block in the WordPress Editor
-
-![Icon Block Screenshot](screenshot-1.png)
-
-### 2. Icon in the Frontend
-
-![Icon Block Screenshot](screenshot-2.png)
 
 ---
 
