@@ -17,6 +17,8 @@ import {
 	__experimentalUseColorProps as useColorProps,
 	ColorPalette,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
+	BlockControls,
+	AlignmentToolbar,
 } from "@wordpress/block-editor";
 import { PanelBody, RangeControl, SelectControl } from "@wordpress/components";
 
@@ -48,9 +50,14 @@ export default function Edit({ attributes, setAttributes }) {
 		iconColor,
 		iconBackgroundColor,
 		iconBackgroundColorGradient,
+		iconAlign,
 	} = attributes;
 
-	const blockProps = useBlockProps();
+	const blockProps = useBlockProps({
+		style: {
+			textAlign: iconAlign,
+		},
+	});
 
 	const colorProps = useColorProps(blockProps);
 	console.log("colorProps", colorProps);
@@ -60,6 +67,14 @@ export default function Edit({ attributes, setAttributes }) {
 
 	return (
 		<>
+			<BlockControls>
+				<AlignmentToolbar
+					value={iconAlign}
+					onChange={(newAlign) => setAttributes({ iconAlign: newAlign })}
+					label="Icon Alignment"
+				/>
+			</BlockControls>
+
 			<InspectorControls>
 				<PanelBody title={__("Icon Picker")}>
 					<IconPicker
@@ -76,20 +91,18 @@ export default function Edit({ attributes, setAttributes }) {
 						{
 							colorValue: iconColor,
 							onColorChange: (color) => setAttributes({ iconColor: color }),
-							label: "Icon Color",
+							label: __("Icon Color"),
 						},
 						{
 							colorValue: iconBackgroundColor,
 							gradientValue: iconBackgroundColorGradient,
 							onColorChange: (value) => {
-								console.log("changed color", value);
 								setAttributes({ iconBackgroundColor: value });
 							},
 							onGradientChange: (value) => {
-								console.log("changed gradient", value);
 								setAttributes({ iconBackgroundColorGradient: value });
 							},
-							label: __("Gradient One"),
+							label: __("Background Color"),
 						},
 					]}
 				/>
