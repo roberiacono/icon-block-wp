@@ -14,7 +14,8 @@ return array(
 			
 		),
 		'supports' => array(
-			'html' => false
+			'html' => false,
+			'textAlign' => true
 		),
 		'attributes' => array(
 			'icon' => array(
@@ -32,6 +33,9 @@ return array(
 				'type' => 'string'
 			),
 			'iconBackgroundColorGradient' => array(
+				'type' => 'string'
+			),
+			'iconAlign' => array(
 				'type' => 'string'
 			)
 		),
