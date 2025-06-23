@@ -69,11 +69,7 @@ export default function Edit({ attributes, setAttributes }) {
 					label="Icon Alignment"
 				/>
 			</BlockControls>
-<<<<<<< HEAD:src/icon-block-wp/edit.js
 
-=======
-			;
->>>>>>> 71fe10dafa0ef840470d1ec823f0383e381b71bc:src/svg-icon-block/edit.js
 			<InspectorControls>
 				<PanelBody title={__("Icon Picker", "icon-block-wp")}>
 					<IconPicker
@@ -99,11 +95,7 @@ export default function Edit({ attributes, setAttributes }) {
 						{
 							colorValue: iconColor,
 							onColorChange: (color) => setAttributes({ iconColor: color }),
-<<<<<<< HEAD:src/icon-block-wp/edit.js
 							label: __("Icon Color", "icon-block-wp"),
-=======
-							label: __("Icon Color"),
->>>>>>> 71fe10dafa0ef840470d1ec823f0383e381b71bc:src/svg-icon-block/edit.js
 						},
 						{
 							colorValue: iconBackgroundColor,
@@ -114,11 +106,7 @@ export default function Edit({ attributes, setAttributes }) {
 							onGradientChange: (value) => {
 								setAttributes({ iconBackgroundColorGradient: value });
 							},
-<<<<<<< HEAD:src/icon-block-wp/edit.js
 							label: __("Background Color", "icon-block-wp"),
-=======
-							label: __("Background Color"),
->>>>>>> 71fe10dafa0ef840470d1ec823f0383e381b71bc:src/svg-icon-block/edit.js
 						},
 					]}
 				/>
