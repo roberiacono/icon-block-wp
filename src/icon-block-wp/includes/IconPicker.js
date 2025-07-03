@@ -61,7 +61,7 @@ export default function IconPicker({ selected, onSelect }) {
 		<div>
 			<input
 				type="text"
-				placeholder={__("Search icons...", "icon-block-wp")}
+				placeholder={__("Search icons...", "riaco-icon-block")}
 				value={search}
 				onChange={(e) => setSearch(e.target.value)}
 				style={{ width: "100%", padding: "6px", marginBottom: "8px" }}

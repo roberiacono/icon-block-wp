@@ -1,14 +1,14 @@
-=== Icon Block For WP ===
+=== RIACO Icon Block ===
 Contributors:      prototipo88
 Tags:              icon, icon block, SVG, block
 Tested up to:      6.8
 Stable tag:        0.1.0
-Requires at least: 6.5
+Requires at least: 6.0
 Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-WordPress Icons Block to add SVG icons to your content with full control over icon selection, size, color, alignment, and background gradients.
+RIACO Icon Block add SVG icons as WordPress block with full control over icon selection and style.
 
 == Description ==
 
@@ -45,9 +45,3 @@ Icons used are [Lucide Icons](https://lucide.dev/icons/) – an open-source icon
 
 = 0.1.0 =
 * Release
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.

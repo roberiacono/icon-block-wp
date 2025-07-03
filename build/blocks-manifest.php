@@ -4,7 +4,7 @@ return array(
 	'icon-block-wp' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'icon-block-wp/icon-block-wp',
+		'name' => 'riaco-icon-block/riaco-icon-block',
 		'version' => '0.1.0',
 		'title' => 'Icons',
 		'category' => 'widgets',
@@ -39,7 +39,7 @@ return array(
 				'type' => 'string'
 			)
 		),
-		'textdomain' => 'icon-block-wp',
+		'textdomain' => 'riaco-icon-block',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css'

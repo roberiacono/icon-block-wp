@@ -73837,7 +73837,7 @@ const hasA11yProp = (props) => {
   \**************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"icon-block-wp/icon-block-wp","version":"0.1.0","title":"Icons","category":"widgets","icon":"lightbulb","description":"Add SVG icons to your content with full control over icon selection, size, color, alignment, and background gradients.","example":{},"supports":{"html":false,"textAlign":true},"attributes":{"icon":{"type":"string","default":"Stars"},"size":{"type":"number","default":24},"iconColor":{"type":"string"},"iconBackgroundColor":{"type":"string"},"iconBackgroundColorGradient":{"type":"string"},"iconAlign":{"type":"string"}},"textdomain":"icon-block-wp","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"riaco-icon-block/riaco-icon-block","version":"0.1.0","title":"Icons","category":"widgets","icon":"lightbulb","description":"Add SVG icons to your content with full control over icon selection, size, color, alignment, and background gradients.","example":{},"supports":{"html":false,"textAlign":true},"attributes":{"icon":{"type":"string","default":"Stars"},"size":{"type":"number","default":24},"iconColor":{"type":"string"},"iconBackgroundColor":{"type":"string"},"iconBackgroundColorGradient":{"type":"string"},"iconAlign":{"type":"string"}},"textdomain":"riaco-icon-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ }),
 
@@ -73928,7 +73928,7 @@ function Edit({
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Icon Picker", "icon-block-wp"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Icon Picker", "riaco-icon-block"),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_includes_IconPicker__WEBPACK_IMPORTED_MODULE_4__["default"], {
           selected: icon,
           onSelect: name => setAttributes({
@@ -73939,9 +73939,9 @@ function Edit({
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       group: "styles",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Size", "icon-block-wp"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Size", "riaco-icon-block"),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Icon Size", "icon-block-wp"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Icon Size", "riaco-icon-block"),
           value: size,
           onChange: value => setAttributes({
             size: value
@@ -73950,14 +73950,14 @@ function Edit({
           max: 256
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.__experimentalPanelColorGradientSettings, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Icon Colors", "icon-block-wp"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Icon Colors", "riaco-icon-block"),
         initialOpen: true,
         settings: [{
           colorValue: iconColor,
           onColorChange: color => setAttributes({
             iconColor: color
           }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Icon Color", "icon-block-wp")
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Icon Color", "riaco-icon-block")
         }, {
           colorValue: iconBackgroundColor,
           gradientValue: iconBackgroundColorGradient,
@@ -73971,7 +73971,7 @@ function Edit({
               iconBackgroundColorGradient: value
             });
           },
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background Color", "icon-block-wp")
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background Color", "riaco-icon-block")
         }]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
@@ -74078,7 +74078,7 @@ function IconPicker({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
       type: "text",
-      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Search icons...", "icon-block-wp"),
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Search icons...", "riaco-icon-block"),
       value: search,
       onChange: e => setSearch(e.target.value),
       style: {
@@ -74435,7 +74435,7 @@ module.exports = window["ReactJSXRuntime"];
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkicon_block_wp"] = globalThis["webpackChunkicon_block_wp"] || [];
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkriaco_icon_block"] = globalThis["webpackChunkriaco_icon_block"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

@@ -71,7 +71,7 @@ export default function Edit({ attributes, setAttributes }) {
 			</BlockControls>
 
 			<InspectorControls>
-				<PanelBody title={__("Icon Picker", "icon-block-wp")}>
+				<PanelBody title={__("Icon Picker", "riaco-icon-block")}>
 					<IconPicker
 						selected={icon}
 						onSelect={(name) => setAttributes({ icon: name })}
@@ -79,9 +79,9 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 			<InspectorControls group="styles">
-				<PanelBody title={__("Size", "icon-block-wp")}>
+				<PanelBody title={__("Size", "riaco-icon-block")}>
 					<RangeControl
-						label={__("Icon Size", "icon-block-wp")}
+						label={__("Icon Size", "riaco-icon-block")}
 						value={size}
 						onChange={(value) => setAttributes({ size: value })}
 						min={8}
@@ -89,13 +89,13 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 				<PanelColorGradientSettings
-					title={__("Icon Colors", "icon-block-wp")}
+					title={__("Icon Colors", "riaco-icon-block")}
 					initialOpen={true}
 					settings={[
 						{
 							colorValue: iconColor,
 							onColorChange: (color) => setAttributes({ iconColor: color }),
-							label: __("Icon Color", "icon-block-wp"),
+							label: __("Icon Color", "riaco-icon-block"),
 						},
 						{
 							colorValue: iconBackgroundColor,
@@ -106,7 +106,7 @@ export default function Edit({ attributes, setAttributes }) {
 							onGradientChange: (value) => {
 								setAttributes({ iconBackgroundColorGradient: value });
 							},
-							label: __("Background Color", "icon-block-wp"),
+							label: __("Background Color", "riaco-icon-block"),
 						},
 					]}
 				/>

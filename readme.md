@@ -1,6 +1,6 @@
-# Icon Block For WP
+# RIACO Icon Block
 
-WordPress Icons Block to add SVG icons to your content with full control over icon selection, size, color, alignment, and background gradients.
+RIACO Icon Block to add SVG icons to your content with full control over icon selection, size, color, alignment, and background gradients.
 
 ---
 

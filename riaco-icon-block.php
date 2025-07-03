@@ -1,15 +1,15 @@
 <?php
 /**
- * Plugin Name:       Icon Block For WP
+ * Plugin Name:       RIACO Icon Block
  * Description:       WordPress Icons Block to add SVG icons to your content with full control over icon selection, size, color, alignment, and background gradients.
  * Version:           0.1.0
- * Requires at least: 6.5
+ * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Roberto Iacono
  * Author URI:        https://www.robertoiacono.it/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       icon-block-wp
+ * Text Domain:       riaco-icon-block
  * Domain Path:       /languages
  *
  * @package CreateBlock
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @see https://make.wordpress.org/core/2025/03/13/more-efficient-block-type-registration-in-6-8/
  * @see https://make.wordpress.org/core/2024/10/17/new-block-type-registration-apis-to-improve-performance-in-wordpress-6-7/
  */
-function create_block_icon_block_wp_init() {
+function riaco_icon_block_create_block_init() {
 	/**
 	 * Registers the block(s) metadata from the `blocks-manifest.php` and registers the block type(s)
 	 * based on the registered block metadata.
@@ -36,7 +36,7 @@ function create_block_icon_block_wp_init() {
 	 */
 	if ( function_exists( 'wp_register_block_types_from_metadata_collection' ) ) {
 		wp_register_block_types_from_metadata_collection( __DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php' );
-		return; 
+		return;
 	}
 
 	/**
@@ -57,6 +57,5 @@ function create_block_icon_block_wp_init() {
 	foreach ( array_keys( $manifest_data ) as $block_type ) {
 		register_block_type( __DIR__ . "/build/{$block_type}" );
 	}
-
 }
-add_action( 'init', 'create_block_icon_block_wp_init' );
+add_action( 'init', 'riaco_icon_block_create_block_init' );
