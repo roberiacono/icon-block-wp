@@ -73858,10 +73858,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/icon-block-wp/editor.scss");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/lucide-react.js");
-/* harmony import */ var _includes_IconPicker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./includes/IconPicker */ "./src/icon-block-wp/includes/IconPicker.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _includes_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./includes/icons */ "./src/icon-block-wp/includes/icons.js");
+/* harmony import */ var _includes_IconPicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./includes/IconPicker */ "./src/icon-block-wp/includes/IconPicker.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
 /**
  * Retrieves the translation of text.
  *
@@ -73915,32 +73915,33 @@ function Edit({
     }
   });
   const colorProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.__experimentalUseColorProps)(blockProps);
-  const IconComponent = lucide_react__WEBPACK_IMPORTED_MODULE_6__[icon]; //LucideIcons[icon];
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.AlignmentToolbar, {
+  //const IconComponent = LucideIcons[icon]; //LucideIcons[icon];
+  const IconComponent = _includes_icons__WEBPACK_IMPORTED_MODULE_4__.ALLOWED_ICONS[icon];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.AlignmentToolbar, {
         value: iconAlign,
         onChange: newAlign => setAttributes({
           iconAlign: newAlign
         }),
         label: "Icon Alignment"
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Icon Picker", "riaco-icon-block"),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_includes_IconPicker__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_includes_IconPicker__WEBPACK_IMPORTED_MODULE_5__["default"], {
           selected: icon,
           onSelect: name => setAttributes({
             icon: name
           })
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       group: "styles",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Size", "riaco-icon-block"),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Icon Size", "riaco-icon-block"),
           value: size,
           onChange: value => setAttributes({
@@ -73949,7 +73950,7 @@ function Edit({
           min: 8,
           max: 256
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.__experimentalPanelColorGradientSettings, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.__experimentalPanelColorGradientSettings, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Icon Colors", "riaco-icon-block"),
         initialOpen: true,
         settings: [{
@@ -73974,16 +73975,16 @@ function Edit({
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background Color", "riaco-icon-block")
         }]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       ...blockProps,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         style: {
           color: iconColor || "inherit",
           backgroundColor: iconBackgroundColor || "transparent",
           background: iconBackgroundColorGradient || "transparent",
           display: "inline-block"
         },
-        children: IconComponent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(IconComponent, {
+        children: IconComponent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(IconComponent, {
           size: size
         })
       })
@@ -74017,24 +74018,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/lucide-react.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons */ "./src/icon-block-wp/includes/icons.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
-const iconNames = Object.keys(lucide_react__WEBPACK_IMPORTED_MODULE_3__);
+const iconNames = Object.keys(_icons__WEBPACK_IMPORTED_MODULE_1__.ALLOWED_ICONS);
 function LazyIcon({
   name,
   selected,
   onSelect
 }) {
-  const ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
-  const [isVisible, setVisible] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+  const ref = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)();
+  const [isVisible, setVisible] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setVisible(true);
@@ -74048,8 +74049,10 @@ function LazyIcon({
     }
     return () => observer.disconnect();
   }, []);
-  const Icon = lucide_react__WEBPACK_IMPORTED_MODULE_3__[name];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+
+  //const Icon = LucideIcons[name];
+  const Icon = _icons__WEBPACK_IMPORTED_MODULE_1__.ALLOWED_ICONS[name];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
     ref: ref,
     onClick: () => onSelect(name),
     style: {
@@ -74064,7 +74067,7 @@ function LazyIcon({
       justifyContent: "center"
     },
     title: name,
-    children: isVisible && Icon ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Icon, {
+    children: isVisible && Icon ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Icon, {
       size: 20
     }) : null
   });
@@ -74073,10 +74076,10 @@ function IconPicker({
   selected,
   onSelect
 }) {
-  const [search, setSearch] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("");
+  const [search, setSearch] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)("");
   const filtered = iconNames.filter(name => name.toLowerCase().includes(search.toLowerCase()));
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
       type: "text",
       placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Search icons...", "riaco-icon-block"),
       value: search,
@@ -74086,7 +74089,7 @@ function IconPicker({
         padding: "6px",
         marginBottom: "8px"
       }
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       style: {
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, minmax(40px, 1fr))",
@@ -74094,7 +74097,7 @@ function IconPicker({
         maxHeight: "300px",
         overflowY: "auto"
       },
-      children: filtered.map(name => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(LazyIcon, {
+      children: filtered.map(name => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(LazyIcon, {
         name: name,
         selected: selected,
         onSelect: onSelect
@@ -74102,6 +74105,356 @@ function IconPicker({
     })]
   });
 }
+
+/***/ }),
+
+/***/ "./src/icon-block-wp/includes/icons.js":
+/*!*********************************************!*\
+  !*** ./src/icon-block-wp/includes/icons.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ALLOWED_ICONS: () => (/* binding */ ALLOWED_ICONS)
+/* harmony export */ });
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/activity.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/alarm-clock.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/circle-alert.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/archive.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/award.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/banknote.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/chart-no-axes-column.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/bell.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/book-open.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/briefcase.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/calendar.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/camera.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/circle-check-big.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/clipboard-list.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/cloud.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/credit-card.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/lucide-react.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/database.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/dollar-sign.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/download.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/square-pen.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/eye.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/file.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/flag.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/folder.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/gauge.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/globe.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/grid-3x3.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/hard-drive.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/hash.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/headphones.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/heart.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/circle-question-mark.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/house.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/image.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/inbox.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/info.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/key.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/layers.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/layout-dashboard.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/lightbulb.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/link.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/list.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/lock.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/log-in.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/mail.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/map-pin.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/menu.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/message-circle.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/mic.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/monitor.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/moon.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/music.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/navigation.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/notebook.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/package.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/paperclip.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/circle-pause.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/pen-tool.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/phone.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/chart-pie.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/play.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/circle-plus.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/printer.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/puzzle.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/radio.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/receipt.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/refresh-ccw.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/rocket.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/rss.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/save.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/scissors.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/search.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/send.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/server.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/settings.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/share.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/shield-check.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_78__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/shopping-cart.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_79__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/sliders-vertical.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_80__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/smartphone.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_81__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/speaker.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_82__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/star.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/sun.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/tag.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/target.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/terminal.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/thumbs-up.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_88__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/trash.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/trending-up.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/truck.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/tv.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/umbrella.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/upload.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/user.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/user-check.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/users.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/video.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_98__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/volume-2.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_99__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/wallet.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_100__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/watch.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_101__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/wifi.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_102__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/wrench.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_103__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/circle-x.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_104__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/zap.js");
+
+const ALLOWED_ICONS = {
+  Activity: lucide_react__WEBPACK_IMPORTED_MODULE_0__["default"],
+  // analytics, services
+  AlarmClock: lucide_react__WEBPACK_IMPORTED_MODULE_1__["default"],
+  // scheduling
+  AlertCircle: lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"],
+  // alerts
+  Archive: lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"],
+  // file management
+  Award: lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"],
+  // recognition, achievements
+
+  Banknote: lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"],
+  // finance
+  BarChart2: lucide_react__WEBPACK_IMPORTED_MODULE_6__["default"],
+  // statistics
+  Bell: lucide_react__WEBPACK_IMPORTED_MODULE_7__["default"],
+  // notifications
+  BookOpen: lucide_react__WEBPACK_IMPORTED_MODULE_8__["default"],
+  // documentation, learning
+  Briefcase: lucide_react__WEBPACK_IMPORTED_MODULE_9__["default"],
+  // business, professional services
+
+  Calendar: lucide_react__WEBPACK_IMPORTED_MODULE_10__["default"],
+  // date & events
+  Camera: lucide_react__WEBPACK_IMPORTED_MODULE_11__["default"],
+  // media, photo
+  CheckCircle: lucide_react__WEBPACK_IMPORTED_MODULE_12__["default"],
+  // success, confirmation
+  ClipboardList: lucide_react__WEBPACK_IMPORTED_MODULE_13__["default"],
+  // tasks, checklists
+  Cloud: lucide_react__WEBPACK_IMPORTED_MODULE_14__["default"],
+  // cloud services
+
+  CreditCard: lucide_react__WEBPACK_IMPORTED_MODULE_15__["default"],
+  // payments
+  Cube: lucide_react__WEBPACK_IMPORTED_MODULE_16__.Cube,
+  // 3D design or structure
+  Database: lucide_react__WEBPACK_IMPORTED_MODULE_17__["default"],
+  // backend, data
+  DollarSign: lucide_react__WEBPACK_IMPORTED_MODULE_18__["default"],
+  // pricing
+  Download: lucide_react__WEBPACK_IMPORTED_MODULE_19__["default"],
+  // files, assets
+
+  Edit: lucide_react__WEBPACK_IMPORTED_MODULE_20__["default"],
+  // writing, edit
+  Eye: lucide_react__WEBPACK_IMPORTED_MODULE_21__["default"],
+  // visibility, preview
+  File: lucide_react__WEBPACK_IMPORTED_MODULE_22__["default"],
+  // general file
+  Flag: lucide_react__WEBPACK_IMPORTED_MODULE_23__["default"],
+  // feature flag, highlights
+  Folder: lucide_react__WEBPACK_IMPORTED_MODULE_24__["default"],
+  // organization
+
+  Gauge: lucide_react__WEBPACK_IMPORTED_MODULE_25__["default"],
+  // performance, dashboards
+  Globe: lucide_react__WEBPACK_IMPORTED_MODULE_26__["default"],
+  // international, online
+  Grid: lucide_react__WEBPACK_IMPORTED_MODULE_27__["default"],
+  // layout
+  HardDrive: lucide_react__WEBPACK_IMPORTED_MODULE_28__["default"],
+  // storage
+  Hash: lucide_react__WEBPACK_IMPORTED_MODULE_29__["default"],
+  // tag or identifier
+
+  Headphones: lucide_react__WEBPACK_IMPORTED_MODULE_30__["default"],
+  // audio, support
+  Heart: lucide_react__WEBPACK_IMPORTED_MODULE_31__["default"],
+  // likes, favorites
+  HelpCircle: lucide_react__WEBPACK_IMPORTED_MODULE_32__["default"],
+  // help
+  Home: lucide_react__WEBPACK_IMPORTED_MODULE_33__["default"],
+  // homepage
+  Image: lucide_react__WEBPACK_IMPORTED_MODULE_34__["default"],
+  // media
+
+  Inbox: lucide_react__WEBPACK_IMPORTED_MODULE_35__["default"],
+  // messaging, communication
+  Info: lucide_react__WEBPACK_IMPORTED_MODULE_36__["default"],
+  // information
+  Key: lucide_react__WEBPACK_IMPORTED_MODULE_37__["default"],
+  // security
+  Layers: lucide_react__WEBPACK_IMPORTED_MODULE_38__["default"],
+  // design, layout
+  LayoutDashboard: lucide_react__WEBPACK_IMPORTED_MODULE_39__["default"],
+  // admin panel
+
+  Lightbulb: lucide_react__WEBPACK_IMPORTED_MODULE_40__["default"],
+  // ideas, tips
+  Link: lucide_react__WEBPACK_IMPORTED_MODULE_41__["default"],
+  // connections
+  List: lucide_react__WEBPACK_IMPORTED_MODULE_42__["default"],
+  // tasks or navigation
+  Lock: lucide_react__WEBPACK_IMPORTED_MODULE_43__["default"],
+  // security
+  LogIn: lucide_react__WEBPACK_IMPORTED_MODULE_44__["default"],
+  // authentication
+
+  Mail: lucide_react__WEBPACK_IMPORTED_MODULE_45__["default"],
+  // contact, messages
+  MapPin: lucide_react__WEBPACK_IMPORTED_MODULE_46__["default"],
+  // location
+  Menu: lucide_react__WEBPACK_IMPORTED_MODULE_47__["default"],
+  // navigation menu
+  MessageCircle: lucide_react__WEBPACK_IMPORTED_MODULE_48__["default"],
+  // comments
+  Mic: lucide_react__WEBPACK_IMPORTED_MODULE_49__["default"],
+  // audio input
+
+  Monitor: lucide_react__WEBPACK_IMPORTED_MODULE_50__["default"],
+  // display, tech
+  Moon: lucide_react__WEBPACK_IMPORTED_MODULE_51__["default"],
+  // dark mode
+  Music: lucide_react__WEBPACK_IMPORTED_MODULE_52__["default"],
+  // audio
+  Navigation: lucide_react__WEBPACK_IMPORTED_MODULE_53__["default"],
+  // directions
+  Notebook: lucide_react__WEBPACK_IMPORTED_MODULE_54__["default"],
+  // notes
+
+  Package: lucide_react__WEBPACK_IMPORTED_MODULE_55__["default"],
+  // product
+  Paperclip: lucide_react__WEBPACK_IMPORTED_MODULE_56__["default"],
+  // attachments
+  PauseCircle: lucide_react__WEBPACK_IMPORTED_MODULE_57__["default"],
+  // media controls
+  PenTool: lucide_react__WEBPACK_IMPORTED_MODULE_58__["default"],
+  // design, graphics
+  Phone: lucide_react__WEBPACK_IMPORTED_MODULE_59__["default"],
+  // contact
+
+  PieChart: lucide_react__WEBPACK_IMPORTED_MODULE_60__["default"],
+  // analytics
+  Play: lucide_react__WEBPACK_IMPORTED_MODULE_61__["default"],
+  // media, CTA
+  PlusCircle: lucide_react__WEBPACK_IMPORTED_MODULE_62__["default"],
+  // add
+  Printer: lucide_react__WEBPACK_IMPORTED_MODULE_63__["default"],
+  // printing
+  Puzzle: lucide_react__WEBPACK_IMPORTED_MODULE_64__["default"],
+  // integrations
+
+  Radio: lucide_react__WEBPACK_IMPORTED_MODULE_65__["default"],
+  // broadcast
+  Receipt: lucide_react__WEBPACK_IMPORTED_MODULE_66__["default"],
+  // payments
+  RefreshCcw: lucide_react__WEBPACK_IMPORTED_MODULE_67__["default"],
+  // sync
+  Rocket: lucide_react__WEBPACK_IMPORTED_MODULE_68__["default"],
+  // startup, launch
+  Rss: lucide_react__WEBPACK_IMPORTED_MODULE_69__["default"],
+  // feed
+
+  Save: lucide_react__WEBPACK_IMPORTED_MODULE_70__["default"],
+  // storage
+  Scissors: lucide_react__WEBPACK_IMPORTED_MODULE_71__["default"],
+  // edit/cut
+  Search: lucide_react__WEBPACK_IMPORTED_MODULE_72__["default"],
+  // find
+  Send: lucide_react__WEBPACK_IMPORTED_MODULE_73__["default"],
+  // messaging
+  Server: lucide_react__WEBPACK_IMPORTED_MODULE_74__["default"],
+  // backend
+
+  Settings: lucide_react__WEBPACK_IMPORTED_MODULE_75__["default"],
+  // configuration
+  Share: lucide_react__WEBPACK_IMPORTED_MODULE_76__["default"],
+  // social or internal
+  ShieldCheck: lucide_react__WEBPACK_IMPORTED_MODULE_77__["default"],
+  // security confirmation
+  ShoppingCart: lucide_react__WEBPACK_IMPORTED_MODULE_78__["default"],
+  // ecommerce
+  Sliders: lucide_react__WEBPACK_IMPORTED_MODULE_79__["default"],
+  // customization
+
+  Smartphone: lucide_react__WEBPACK_IMPORTED_MODULE_80__["default"],
+  // mobile
+  Speaker: lucide_react__WEBPACK_IMPORTED_MODULE_81__["default"],
+  // audio
+  Star: lucide_react__WEBPACK_IMPORTED_MODULE_82__["default"],
+  // featured
+  Sun: lucide_react__WEBPACK_IMPORTED_MODULE_83__["default"],
+  // light mode
+  Tag: lucide_react__WEBPACK_IMPORTED_MODULE_84__["default"],
+  // labels
+
+  Target: lucide_react__WEBPACK_IMPORTED_MODULE_85__["default"],
+  // marketing, goal
+  Terminal: lucide_react__WEBPACK_IMPORTED_MODULE_86__["default"],
+  // development
+  ThumbsUp: lucide_react__WEBPACK_IMPORTED_MODULE_87__["default"],
+  // feedback
+  Trash: lucide_react__WEBPACK_IMPORTED_MODULE_88__["default"],
+  // delete
+  TrendingUp: lucide_react__WEBPACK_IMPORTED_MODULE_89__["default"],
+  // growth
+
+  Truck: lucide_react__WEBPACK_IMPORTED_MODULE_90__["default"],
+  // shipping, logistics
+  Tv: lucide_react__WEBPACK_IMPORTED_MODULE_91__["default"],
+  // media
+  Umbrella: lucide_react__WEBPACK_IMPORTED_MODULE_92__["default"],
+  // coverage, support
+  Upload: lucide_react__WEBPACK_IMPORTED_MODULE_93__["default"],
+  // file handling
+  User: lucide_react__WEBPACK_IMPORTED_MODULE_94__["default"],
+  // account
+
+  UserCheck: lucide_react__WEBPACK_IMPORTED_MODULE_95__["default"],
+  // verified user
+  Users: lucide_react__WEBPACK_IMPORTED_MODULE_96__["default"],
+  // team
+  Video: lucide_react__WEBPACK_IMPORTED_MODULE_97__["default"],
+  // video content
+  Volume2: lucide_react__WEBPACK_IMPORTED_MODULE_98__["default"],
+  // audio
+  Wallet: lucide_react__WEBPACK_IMPORTED_MODULE_99__["default"],
+  // finance
+
+  Watch: lucide_react__WEBPACK_IMPORTED_MODULE_100__["default"],
+  // time tracking
+  Wifi: lucide_react__WEBPACK_IMPORTED_MODULE_101__["default"],
+  // connectivity
+  Wrench: lucide_react__WEBPACK_IMPORTED_MODULE_102__["default"],
+  // tools
+  XCircle: lucide_react__WEBPACK_IMPORTED_MODULE_103__["default"],
+  // errors
+  Zap: lucide_react__WEBPACK_IMPORTED_MODULE_104__["default"] // lightning, fast action
+};
 
 /***/ }),
 

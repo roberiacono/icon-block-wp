@@ -1,8 +1,8 @@
 import { __ } from "@wordpress/i18n";
-import * as LucideIcons from "lucide-react";
+import { ALLOWED_ICONS } from "./icons";
 import { useState, useRef, useEffect } from "react";
 
-const iconNames = Object.keys(LucideIcons);
+const iconNames = Object.keys(ALLOWED_ICONS);
 
 function LazyIcon({ name, selected, onSelect }) {
 	const ref = useRef();
@@ -26,7 +26,8 @@ function LazyIcon({ name, selected, onSelect }) {
 		return () => observer.disconnect();
 	}, []);
 
-	const Icon = LucideIcons[name];
+	//const Icon = LucideIcons[name];
+	const Icon = ALLOWED_ICONS[name];
 
 	return (
 		<button

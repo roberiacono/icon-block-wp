@@ -29,7 +29,7 @@ import { PanelBody, RangeControl } from "@wordpress/components";
  */
 import "./editor.scss";
 
-import * as LucideIcons from "lucide-react";
+import { ALLOWED_ICONS } from "./includes/icons";
 import IconPicker from "./includes/IconPicker";
 
 /**
@@ -58,7 +58,8 @@ export default function Edit({ attributes, setAttributes }) {
 
 	const colorProps = useColorProps(blockProps);
 
-	const IconComponent = LucideIcons[icon]; //LucideIcons[icon];
+	//const IconComponent = LucideIcons[icon]; //LucideIcons[icon];
+	const IconComponent = ALLOWED_ICONS[icon];
 
 	return (
 		<>

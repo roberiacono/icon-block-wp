@@ -36,6 +36,9 @@ Add customizable icons to your content with full control over icon selection, si
 
 Open the block settings panel in the right sidebar, and click on the “Icon Picker.” Use the search box to quickly find and select any icon from the Lucide library.
 
+== Screenshots ==
+
+1. Icon block in the block editor.
 
 == Credits ==
 
