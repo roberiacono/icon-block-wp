@@ -15,7 +15,7 @@
   "attributes": {
     "icon": {
       "type": "string",
-      "default": "Stars"
+      "default": "wordpress"
     },
     "size": {
       "type": "number",

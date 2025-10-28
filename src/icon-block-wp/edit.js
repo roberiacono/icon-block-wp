@@ -29,8 +29,14 @@ import { PanelBody, RangeControl } from "@wordpress/components";
  */
 import "./editor.scss";
 
-import { ALLOWED_ICONS } from "./includes/icons";
-import IconPicker from "./includes/IconPicker";
+/* import { ALLOWED_ICONS } from "./includes/icons"; */
+import { useEffect, useState } from "@wordpress/element";
+//import { loadIcon } from "./includes/loadIcon";
+import IconPicker from "./components/IconPicker";
+
+import { Icon } from "@wordpress/icons";
+
+import { ALLOWED_ICONS } from "../icons";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -58,8 +64,11 @@ export default function Edit({ attributes, setAttributes }) {
 
 	const colorProps = useColorProps(blockProps);
 
-	//const IconComponent = LucideIcons[icon]; //LucideIcons[icon];
-	const IconComponent = ALLOWED_ICONS[icon];
+	/* const Icon = ALLOWED_ICONS[icon];
+	console.log("icon selected:", icon, Icon); */
+	console.log("icon selected:", icon);
+
+	const iconName = ALLOWED_ICONS[icon];
 
 	return (
 		<>
@@ -115,13 +124,20 @@ export default function Edit({ attributes, setAttributes }) {
 			<div {...blockProps}>
 				<div
 					style={{
-						color: iconColor || "inherit",
+						/* color: iconColor || "var(--wp--preset--color--foreground)", */
 						backgroundColor: iconBackgroundColor || "transparent",
 						background: iconBackgroundColorGradient || "transparent",
 						display: "inline-block",
 					}}
 				>
-					{IconComponent && <IconComponent size={size} />}
+					{icon && (
+						<Icon
+							icon={iconName}
+							fill={iconColor || "var(--wp--preset--color--foreground)"}
+							size={size}
+						/>
+					)}
+					{/* {icon && <Icon name={icon} size={size} />} */}
 				</div>
 			</div>
 		</>

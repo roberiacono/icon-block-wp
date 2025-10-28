@@ -20,7 +20,7 @@ return array(
 		'attributes' => array(
 			'icon' => array(
 				'type' => 'string',
-				'default' => 'Stars'
+				'default' => 'wordpress'
 			),
 			'size' => array(
 				'type' => 'number',

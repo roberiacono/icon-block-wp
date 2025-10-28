@@ -1,5 +1,5 @@
 import { useBlockProps } from "@wordpress/block-editor";
-import * as LucideIcons from "lucide-react";
+//import * as LucideIcons from "lucide-react";
 
 export default function save({ attributes }) {
 	const {
@@ -17,19 +17,19 @@ export default function save({ attributes }) {
 		},
 	});
 
-	const IconComponent = LucideIcons[icon];
+	/* const IconComponent = LucideIcons[icon]; */
 
 	return (
 		<div {...blockProps}>
 			<div
 				style={{
-					color: iconColor || "inherit",
+					color: iconColor || "var(--wp--preset--color--foreground)",
 					backgroundColor: iconBackgroundColor || "transparent",
 					background: iconBackgroundColorGradient || "transparent",
 					display: "inline-block",
 				}}
 			>
-				{IconComponent && <IconComponent size={size} />}
+				{/* {DynamicIcon && <DynamicIcon name="camera" size={size} />} */}
 			</div>
 		</div>
 	);
