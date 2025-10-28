@@ -124,7 +124,6 @@ export default function Edit({ attributes, setAttributes }) {
 			<div {...blockProps}>
 				<div
 					style={{
-						/* color: iconColor || "var(--wp--preset--color--foreground)", */
 						backgroundColor: iconBackgroundColor || "transparent",
 						background: iconBackgroundColorGradient || "transparent",
 						display: "inline-block",
@@ -137,7 +136,6 @@ export default function Edit({ attributes, setAttributes }) {
 							size={size}
 						/>
 					)}
-					{/* {icon && <Icon name={icon} size={size} />} */}
 				</div>
 			</div>
 		</>
