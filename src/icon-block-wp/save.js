@@ -1,7 +1,9 @@
 import { useBlockProps } from "@wordpress/block-editor";
 import { Icon } from "@wordpress/icons";
 
-import { ALLOWED_ICONS } from "../icons";
+import { availableIcons } from "../icons";
+
+import { getIcon } from "./includes/get-icon.js";
 
 export default function save({ attributes }) {
 	const {
@@ -20,7 +22,7 @@ export default function save({ attributes }) {
 	});
 
 	/* const IconComponent = LucideIcons[icon]; */
-	const iconName = ALLOWED_ICONS[icon];
+	const iconJSX = getIcon(icon);
 
 	return (
 		<div {...blockProps}>
@@ -32,7 +34,7 @@ export default function save({ attributes }) {
 				}}
 			>
 				<Icon
-					icon={iconName}
+					icon={iconJSX}
 					fill={iconColor || "var(--wp--preset--color--foreground)"}
 					size={size}
 				/>

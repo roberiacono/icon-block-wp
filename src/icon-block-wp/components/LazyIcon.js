@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 
 import { Icon } from "@wordpress/icons";
 
-import { ALLOWED_ICONS } from "../../icons";
+import { getIcon } from "../includes/get-icon.js";
 
 export default function LazyIcon({ name, selected, onSelect }) {
 	const ref = useRef();
@@ -28,8 +28,9 @@ export default function LazyIcon({ name, selected, onSelect }) {
 		return () => observer.disconnect();
 	}, []);
 
-	/* const Icon = ALLOWED_ICONS[name]; */
-	const icon = ALLOWED_ICONS[name];
+	/* const Icon = availableIcons[name]; */
+	//const icon = availableIcons[name];
+	const icon = getIcon(name);
 
 	return (
 		<button

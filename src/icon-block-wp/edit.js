@@ -29,14 +29,16 @@ import { PanelBody, RangeControl } from "@wordpress/components";
  */
 import "./editor.scss";
 
-/* import { ALLOWED_ICONS } from "./includes/icons"; */
+/* import { availableIcons } from "./includes/icons"; */
 import { useEffect, useState } from "@wordpress/element";
 //import { loadIcon } from "./includes/loadIcon";
 import IconPicker from "./components/IconPicker";
 
 import { Icon } from "@wordpress/icons";
 
-import { ALLOWED_ICONS } from "../icons";
+import { availableIcons } from "../icons";
+
+import { getIcon } from "./includes/get-icon.js";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -64,11 +66,11 @@ export default function Edit({ attributes, setAttributes }) {
 
 	const colorProps = useColorProps(blockProps);
 
-	/* const Icon = ALLOWED_ICONS[icon];
+	/* const Icon = availableIcons[icon];
 	console.log("icon selected:", icon, Icon); */
-	console.log("icon selected:", icon);
+	//console.log("icon selected:", icon);
 
-	const iconName = ALLOWED_ICONS[icon];
+	const iconJSX = getIcon(icon);
 
 	return (
 		<>
@@ -131,7 +133,7 @@ export default function Edit({ attributes, setAttributes }) {
 				>
 					{icon && (
 						<Icon
-							icon={iconName}
+							icon={iconJSX}
 							fill={iconColor || "var(--wp--preset--color--foreground)"}
 							size={size}
 						/>

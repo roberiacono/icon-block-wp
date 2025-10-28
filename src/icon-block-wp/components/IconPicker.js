@@ -2,16 +2,16 @@ import { __ } from "@wordpress/i18n";
 
 import { useState, useRef, useEffect } from "react";
 
-/* import { ALLOWED_ICONS } from "../includes/icons"; */
+/* import { availableIcons } from "../includes/icons"; */
 import { Icon } from "@wordpress/icons";
-import { ALLOWED_ICONS } from "../../icons";
+import { availableIcons } from "../../icons";
 
 import LazyIcon from "./LazyIcon";
 
 export default function IconPicker({ selected, onSelect }) {
 	const [search, setSearch] = useState("");
 
-	const iconNames = Object.keys(ALLOWED_ICONS);
+	const iconNames = Object.keys(availableIcons);
 
 	const filtered = iconNames.filter((name) =>
 		name.toLowerCase().includes(search.toLowerCase()),
