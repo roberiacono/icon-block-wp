@@ -31,7 +31,28 @@
       "type": "string"
     },
     "iconAlign": {
-      "type": "string"
+      "type": "string",
+      "default": "center"
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 50
+    },
+    "borderWidth": {
+      "type": "number",
+      "default": 0
+    },
+    "borderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "borderStyle": {
+      "type": "string",
+      "default": "solid"
+    },
+    "margin": {
+      "type": "number",
+      "default": 0
     }
   },
   "textdomain": "riaco-icon-block",

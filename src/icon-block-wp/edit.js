@@ -19,7 +19,13 @@ import {
 	BlockControls,
 	AlignmentToolbar,
 } from "@wordpress/block-editor";
-import { PanelBody, RangeControl } from "@wordpress/components";
+
+import {
+	PanelBody,
+	RangeControl,
+	BorderBoxControl,
+	__experimentalDimensionControl as DimensionControl,
+} from "@wordpress/components";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,14 +35,9 @@ import { PanelBody, RangeControl } from "@wordpress/components";
  */
 import "./editor.scss";
 
-/* import { availableIcons } from "./includes/icons"; */
-import { useEffect, useState } from "@wordpress/element";
-//import { loadIcon } from "./includes/loadIcon";
 import IconPicker from "./components/IconPicker";
 
 import { Icon } from "@wordpress/icons";
-
-import { availableIcons } from "../icons";
 
 import { getIcon } from "./includes/get-icon.js";
 
@@ -56,6 +57,10 @@ export default function Edit({ attributes, setAttributes }) {
 		iconBackgroundColor,
 		iconBackgroundColorGradient,
 		iconAlign,
+		borderRadius = 50, // default circle
+		borderWidth = 0, // default no border
+		borderColor = "", // default no border color
+		borderStyle = "none", // default border style
 	} = attributes;
 
 	const blockProps = useBlockProps({
@@ -66,11 +71,9 @@ export default function Edit({ attributes, setAttributes }) {
 
 	const colorProps = useColorProps(blockProps);
 
-	/* const Icon = availableIcons[icon];
-	console.log("icon selected:", icon, Icon); */
-	//console.log("icon selected:", icon);
-
 	const iconJSX = getIcon(icon);
+
+	const iconColorVal = iconColor || "var(--wp--preset--color--foreground)";
 
 	return (
 		<>
@@ -90,6 +93,34 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 			</InspectorControls>
+
+			<InspectorControls group="styles">
+				<div className="full-width-control-wrapper">
+					<PanelColorGradientSettings
+						title={__("Icon Colors", "riaco-icon-block")}
+						initialOpen={true}
+						settings={[
+							{
+								colorValue: iconColor,
+								onColorChange: (color) => setAttributes({ iconColor: color }),
+								label: __("Icon Color", "riaco-icon-block"),
+							},
+							{
+								colorValue: iconBackgroundColor,
+								gradientValue: iconBackgroundColorGradient,
+								onColorChange: (value) => {
+									setAttributes({ iconBackgroundColor: value });
+								},
+								onGradientChange: (value) => {
+									setAttributes({ iconBackgroundColorGradient: value });
+								},
+								label: __("Background Color", "riaco-icon-block"),
+							},
+						]}
+					/>
+				</div>
+			</InspectorControls>
+
 			<InspectorControls group="styles">
 				<PanelBody title={__("Size", "riaco-icon-block")}>
 					<RangeControl
@@ -100,41 +131,60 @@ export default function Edit({ attributes, setAttributes }) {
 						max={256}
 					/>
 				</PanelBody>
-				<PanelColorGradientSettings
-					title={__("Icon Colors", "riaco-icon-block")}
-					initialOpen={true}
-					settings={[
-						{
-							colorValue: iconColor,
-							onColorChange: (color) => setAttributes({ iconColor: color }),
-							label: __("Icon Color", "riaco-icon-block"),
-						},
-						{
-							colorValue: iconBackgroundColor,
-							gradientValue: iconBackgroundColorGradient,
-							onColorChange: (value) => {
-								setAttributes({ iconBackgroundColor: value });
-							},
-							onGradientChange: (value) => {
-								setAttributes({ iconBackgroundColorGradient: value });
-							},
-							label: __("Background Color", "riaco-icon-block"),
-						},
-					]}
-				/>
+			</InspectorControls>
+
+			<InspectorControls group="styles">
+				<PanelBody title={__("Border", "riaco-icon-block")}>
+					<div className="full-width-control-wrapper">
+						<BorderBoxControl
+							label={__("Border", "riaco-icon-block")}
+							value={{
+								width: borderWidth,
+								color: borderColor,
+								style: borderStyle,
+							}}
+							onChange={(newValues) => {
+								setAttributes({
+									borderWidth: newValues.width,
+									borderColor: newValues.color,
+									borderStyle: newValues.style,
+								});
+							}}
+							__next40pxDefaultSize={true}
+						/>
+					</div>
+					<div className="full-width-control-wrapper">
+						<RangeControl
+							label={__("Border Radius", "riaco-icon-block")}
+							value={borderRadius}
+							onChange={(value) => setAttributes({ borderRadius: value })}
+							min={0}
+							max={100} // percentage
+						/>
+					</div>
+				</PanelBody>
 			</InspectorControls>
 			<div {...blockProps}>
 				<div
+					className="icon-wrapper"
 					style={{
 						backgroundColor: iconBackgroundColor || "transparent",
 						background: iconBackgroundColorGradient || "transparent",
+						width: size,
+						height: size,
 						display: "inline-block",
+						color: iconColorVal,
+						borderRadius: `${borderRadius}%`,
+						borderWidth: borderWidth,
+						borderStyle: borderStyle,
+						borderColor: borderColor || "transparent",
 					}}
 				>
 					{icon && (
 						<Icon
 							icon={iconJSX}
-							fill={iconColor || "var(--wp--preset--color--foreground)"}
+							{...(!iconJSX.props?.stroke ? { fill: iconColorVal } : {})}
+							color={iconColorVal}
 							size={size}
 						/>
 					)}

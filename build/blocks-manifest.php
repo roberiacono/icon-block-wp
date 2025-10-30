@@ -36,7 +36,28 @@ return array(
 				'type' => 'string'
 			),
 			'iconAlign' => array(
-				'type' => 'string'
+				'type' => 'string',
+				'default' => 'center'
+			),
+			'borderRadius' => array(
+				'type' => 'number',
+				'default' => 50
+			),
+			'borderWidth' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'borderColor' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'borderStyle' => array(
+				'type' => 'string',
+				'default' => 'solid'
+			),
+			'margin' => array(
+				'type' => 'number',
+				'default' => 0
 			)
 		),
 		'textdomain' => 'riaco-icon-block',
