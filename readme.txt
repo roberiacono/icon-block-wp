@@ -1,6 +1,6 @@
 === RIACO Icon Block ===
 Contributors:      prototipo88
-Tags:              icon, icon block, SVG, block
+Tags:              icon, icon block, SVG, SVG block, SVG icon
 Tested up to:      6.8
 Stable tag:        0.1.0
 Requires at least: 6.0
@@ -34,15 +34,12 @@ Add customizable icons to your content with full control over icon selection, si
 
 = How do I select an icon? =
 
-Open the block settings panel in the right sidebar, and click on the “Icon Picker.” Use the search box to quickly find and select any icon from the Lucide library.
+Open the block settings panel in the right sidebar, and click on the “Icon Picker.” Use the search box to quickly find and select any icon from the Lucide library or WordPress Social icons.
 
-== Screenshots ==
-
-1. Icon block in the block editor.
 
 == Credits ==
 
-Icons used are [Lucide Icons](https://lucide.dev/icons/) – an open-source icon library.
+Icons used are [Lucide Icons](https://lucide.dev/icons/) and [WordPress Social Icons](https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/social-link/icons).
 
 == Changelog ==
 
