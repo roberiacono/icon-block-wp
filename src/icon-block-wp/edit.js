@@ -55,7 +55,7 @@ export default function Edit({ attributes, setAttributes }) {
 		iconBackgroundColor = null,
 		iconBackgroundColorGradient = null,
 		iconAlign,
-		borderRadius = 50, // default circle
+		borderRadius = 0, // default circle
 		borderWidth = 0, // default no border
 		borderColor = null, // default no border color
 		borderStyle = "none", // default border style
