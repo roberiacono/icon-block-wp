@@ -52,11 +52,19 @@ Open the block settings panel in the right sidebar, and click on the “Icon Pic
 
 ## Credits
 
-Icons used are from [Lucide Icons](https://lucide.dev/icons/) – an open-source icon library.
+Icons used are from [Lucide Icons](https://lucide.dev/icons/) and [WordPress Social Icons](https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/social-link/icons)..
 
 ---
 
 ## Changelog
+
+### 1.0.0
+
+- Add WordPress Social Icons
+- Add custom SVG as string
+- Convert Lucide Icons as SVG strings to reduce build dimensions
+- Use Icon WordPress component to display SVG icons
+- Add border and border radius to icon
 
 ### 0.1.0
 
