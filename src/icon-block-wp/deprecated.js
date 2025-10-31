@@ -6,25 +6,31 @@ import * as LucideIcons from "lucide-react";
 export const deprecated = [
 	{
 		attributes: {
-			icon,
-			size,
-			iconColor,
-			iconBackgroundColor,
-			iconBackgroundColorGradient,
-			iconAlign,
+			icon: { type: "string" },
+			size: { type: "number" },
+			iconColor: { type: "string" },
+			iconBackgroundColor: { type: "string" },
+			iconBackgroundColorGradient: { type: "string" },
+			iconAlign: { type: "string" },
 		},
 		save: ({ attributes }) => {
-			const { icon, size, iconColor, iconBackgroundColor, iconAlign } =
-				attributes;
+			const {
+				icon,
+				size,
+				iconColor,
+				iconBackgroundColor,
+				iconBackgroundColorGradient,
+				iconAlign,
+			} = attributes;
 
 			const blockProps = useBlockProps.save({
 				style: { textAlign: iconAlign },
 			});
+
 			const IconComponent = LucideIcons[icon];
 
 			return (
 				<div {...blockProps}>
-					{" "}
 					<div
 						style={{
 							color: iconColor || "inherit",
@@ -33,9 +39,8 @@ export const deprecated = [
 							display: "inline-block",
 						}}
 					>
-						{" "}
-						{IconComponent && <IconComponent size={size} />}{" "}
-					</div>{" "}
+						{IconComponent && <IconComponent size={size} />}
+					</div>
 				</div>
 			);
 		},

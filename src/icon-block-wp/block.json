@@ -15,7 +15,7 @@
 	"attributes": {
 		"icon": {
 			"type": "string",
-			"default": "wordpress"
+			"default": "WordPressIcon"
 		},
 		"size": {
 			"type": "number",
@@ -39,8 +39,8 @@
 			"default": 50 
 		},
 		"borderWidth": { 
-			"type": "number", 
-			"default": 0 
+			"type": "string", 
+			"default": "0px" 
 		},
 		"borderColor": { 
 			"type": "string", 

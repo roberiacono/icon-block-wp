@@ -20,7 +20,7 @@ return array(
 		'attributes' => array(
 			'icon' => array(
 				'type' => 'string',
-				'default' => 'wordpress'
+				'default' => 'WordPressIcon'
 			),
 			'size' => array(
 				'type' => 'number',
@@ -44,8 +44,8 @@ return array(
 				'default' => 50
 			),
 			'borderWidth' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'string',
+				'default' => '0px'
 			),
 			'borderColor' => array(
 				'type' => 'string',

@@ -14,7 +14,6 @@ import { __ } from "@wordpress/i18n";
 import {
 	useBlockProps,
 	InspectorControls,
-	__experimentalUseColorProps as useColorProps,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
 	BlockControls,
 	AlignmentToolbar,
@@ -24,7 +23,6 @@ import {
 	PanelBody,
 	RangeControl,
 	BorderBoxControl,
-	__experimentalDimensionControl as DimensionControl,
 } from "@wordpress/components";
 
 /**
@@ -54,12 +52,12 @@ export default function Edit({ attributes, setAttributes }) {
 		icon,
 		size,
 		iconColor,
-		iconBackgroundColor,
-		iconBackgroundColorGradient,
+		iconBackgroundColor = null,
+		iconBackgroundColorGradient = null,
 		iconAlign,
 		borderRadius = 50, // default circle
 		borderWidth = 0, // default no border
-		borderColor = "", // default no border color
+		borderColor = null, // default no border color
 		borderStyle = "none", // default border style
 	} = attributes;
 
@@ -69,11 +67,11 @@ export default function Edit({ attributes, setAttributes }) {
 		},
 	});
 
-	const colorProps = useColorProps(blockProps);
-
 	const iconJSX = getIcon(icon);
 
 	const iconColorVal = iconColor || "var(--wp--preset--color--foreground)";
+
+	console.log("attributes", attributes);
 
 	return (
 		<>
@@ -144,6 +142,7 @@ export default function Edit({ attributes, setAttributes }) {
 								style: borderStyle,
 							}}
 							onChange={(newValues) => {
+								console.log("newValues", newValues);
 								setAttributes({
 									borderWidth: newValues.width,
 									borderColor: newValues.color,
@@ -168,8 +167,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<div
 					className="icon-wrapper"
 					style={{
-						backgroundColor: iconBackgroundColor || "transparent",
-						background: iconBackgroundColorGradient || "transparent",
+						background: iconBackgroundColor || iconBackgroundColorGradient,
 						width: size,
 						height: size,
 						display: "inline-block",
@@ -177,10 +175,10 @@ export default function Edit({ attributes, setAttributes }) {
 						borderRadius: `${borderRadius}%`,
 						borderWidth: borderWidth,
 						borderStyle: borderStyle,
-						borderColor: borderColor || "transparent",
+						borderColor: borderColor,
 					}}
 				>
-					{icon && (
+					{icon && iconJSX && (
 						<Icon
 							icon={iconJSX}
 							{...(!iconJSX.props?.stroke ? { fill: iconColorVal } : {})}

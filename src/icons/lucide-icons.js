@@ -3,7 +3,7 @@ export const lucideIcons = {
 		'\n<svg\n  class="lucide lucide-a-arrow-down"\n  xmlns="http://www.w3.org/2000/svg"\n  width="24"\n  height="24"\n  viewBox="0 0 24 24"\n  fill="none"\n  stroke="currentColor"\n  stroke-width="2"\n  stroke-linecap="round"\n  stroke-linejoin="round"\n>\n  <path d="m14 12 4 4 4-4" />\n  <path d="M18 16V7" />\n  <path d="m2 16 4.039-9.69a.5.5 0 0 1 .923 0L11 16" />\n  <path d="M3.304 13h6.392" />\n</svg>\n',
 	AArrowUp:
 		'\n<svg\n  class="lucide lucide-a-arrow-up"\n  xmlns="http://www.w3.org/2000/svg"\n  width="24"\n  height="24"\n  viewBox="0 0 24 24"\n  fill="none"\n  stroke="currentColor"\n  stroke-width="2"\n  stroke-linecap="round"\n  stroke-linejoin="round"\n>\n  <path d="m14 11 4-4 4 4" />\n  <path d="M18 16V7" />\n  <path d="m2 16 4.039-9.69a.5.5 0 0 1 .923 0L11 16" />\n  <path d="M3.304 13h6.392" />\n</svg>\n',
-	/* ALargeSmall:
+	ALargeSmall:
 		'\n<svg\n  class="lucide lucide-a-large-small"\n  xmlns="http://www.w3.org/2000/svg"\n  width="24"\n  height="24"\n  viewBox="0 0 24 24"\n  fill="none"\n  stroke="currentColor"\n  stroke-width="2"\n  stroke-linecap="round"\n  stroke-linejoin="round"\n>\n  <path d="m15 16 2.536-7.328a1.02 1.02 1 0 1 1.928 0L22 16" />\n  <path d="M15.697 14h5.606" />\n  <path d="m2 16 4.039-9.69a.5.5 0 0 1 .923 0L11 16" />\n  <path d="M3.304 13h6.392" />\n</svg>',
 	Accessibility:
 		'\n<svg\n  class="lucide lucide-accessibility"\n  xmlns="http://www.w3.org/2000/svg"\n  width="24"\n  height="24"\n  viewBox="0 0 24 24"\n  fill="none"\n  stroke="currentColor"\n  stroke-width="2"\n  stroke-linecap="round"\n  stroke-linejoin="round"\n>\n  <circle cx="16" cy="4" r="1" />\n  <path d="m18 19 1-7-6 1" />\n  <path d="m5 8 3-3 5.5 3-2.36 3.5" />\n  <path d="M4.24 14.5a5 5 0 0 0 6.88 6" />\n  <path d="M13.76 17.5a5 5 0 0 0-6.88-6" />\n</svg>\n',
@@ -3605,5 +3605,4 @@ export const lucideIcons = {
 		'\n<svg\n  class="lucide lucide-zoom-in"\n  xmlns="http://www.w3.org/2000/svg"\n  width="24"\n  height="24"\n  viewBox="0 0 24 24"\n  fill="none"\n  stroke="currentColor"\n  stroke-width="2"\n  stroke-linecap="round"\n  stroke-linejoin="round"\n>\n  <circle cx="11" cy="11" r="8" />\n  <line x1="21" x2="16.65" y1="21" y2="16.65" />\n  <line x1="11" x2="11" y1="8" y2="14" />\n  <line x1="8" x2="14" y1="11" y2="11" />\n</svg>\n',
 	ZoomOut:
 		'\n<svg\n  class="lucide lucide-zoom-out"\n  xmlns="http://www.w3.org/2000/svg"\n  width="24"\n  height="24"\n  viewBox="0 0 24 24"\n  fill="none"\n  stroke="currentColor"\n  stroke-width="2"\n  stroke-linecap="round"\n  stroke-linejoin="round"\n>\n  <circle cx="11" cy="11" r="8" />\n  <line x1="21" x2="16.65" y1="21" y2="16.65" />\n  <line x1="8" x2="14" y1="11" y2="11" />\n</svg>\n',
- */
 };
