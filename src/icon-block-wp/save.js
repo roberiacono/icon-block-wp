@@ -17,8 +17,6 @@ export default function save({ attributes }) {
 		borderStyle = "none", // default border style
 	} = attributes;
 
-	console.log("attributes", attributes);
-
 	const blockProps = useBlockProps.save({
 		style: {
 			textAlign: iconAlign,

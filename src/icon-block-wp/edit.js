@@ -71,15 +71,13 @@ export default function Edit({ attributes, setAttributes }) {
 
 	const iconColorVal = iconColor || "var(--wp--preset--color--foreground)";
 
-	console.log("attributes", attributes);
-
 	return (
 		<>
 			<BlockControls>
 				<AlignmentToolbar
 					value={iconAlign}
 					onChange={(newAlign) => setAttributes({ iconAlign: newAlign })}
-					label="Icon Alignment"
+					label={__("Icon Alignment", "riaco-icon-block")}
 				/>
 			</BlockControls>
 
@@ -142,7 +140,6 @@ export default function Edit({ attributes, setAttributes }) {
 								style: borderStyle,
 							}}
 							onChange={(newValues) => {
-								console.log("newValues", newValues);
 								setAttributes({
 									borderWidth: newValues.width,
 									borderColor: newValues.color,

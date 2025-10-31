@@ -27,12 +27,6 @@ export const parseIcon = (icon) => {
 		replace: ({ name, attribs, children }) => {
 			if (!attribs) return;
 
-			// Rename "class" to "className" for React
-			/* if (attribs.class) {
-				attribs.className = attribs.class;
-				delete attribs.class;
-			} */
-
 			const props = normalizeAttribs(attribs);
 
 			if (name === "svg") return <SVG {...props}>{domToReact(children)}</SVG>;

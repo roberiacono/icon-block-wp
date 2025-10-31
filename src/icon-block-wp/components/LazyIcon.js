@@ -28,8 +28,6 @@ export default function LazyIcon({ name, selected, onSelect }) {
 		return () => observer.disconnect();
 	}, []);
 
-	/* const Icon = availableIcons[name]; */
-	//const icon = availableIcons[name];
 	const icon = getIcon(name);
 
 	return (

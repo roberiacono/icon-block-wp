@@ -1,9 +1,7 @@
 import { __ } from "@wordpress/i18n";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
-/* import { availableIcons } from "../includes/icons"; */
-import { Icon } from "@wordpress/icons";
 import { availableIcons } from "../../icons";
 
 import LazyIcon from "./LazyIcon";
